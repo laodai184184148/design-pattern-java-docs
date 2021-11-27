@@ -30,7 +30,10 @@
 
 ## 3.Cách Decorator Pattern giải quyết vấn đề
 
-- 
- 
-
+- Decorator pattern còn có một thuật ngữ dùng để thay thế khác gọi là **Wrapper** , chỉ cần dựa vào cái tên **Wrapper** thì ta đã có thể hình dung được ý tưởng của Decorator là gì rồi phải không nào . **Wrapper** là một object mà ở đó ta có thể liên kết với các targer object khác . **Wrapper** và các object được Wrapper đều thực hiện cùng các method giống nhau và **Wrapper** liên kết với target thông qua các method này , tuy nhiên wrapper có thể thay đổi kết quả của các method này bằng cách thêm một vài tính năng mới nào đó tùy thuộc vào logic ngiệp vụ vào trước và sau khi **Wrapper** gửi request đến object được wrapper.
+- **Wrapper** sẽ chấp nhận các wrapped object mà implement cùng một interface với nó,do đó nó có thể cho phép bạn wrapp một đối tượng trong nhiều **Wrapper**.
+- Decorator Pattern giải quyết vấn đề nêu ở trên bằng cách đưa method cơ bản nhất là **Email notification** vào đổi tượng gốc và đưa các phường thức send notification khác vào trong các **Wrapper** khác.
+- ![alt text](https://user-images.githubusercontent.com/57431066/143668970-79e47a70-e6af-41d5-8a66-b15498b2e3e2.png)
+## 4.Structure
+-![alt text](https://user-images.githubusercontent.com/57431066/143669467-2b0e1ac6-3c1f-4206-936d-89cf46e773f3.png)
 
