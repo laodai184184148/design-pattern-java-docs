@@ -36,4 +36,6 @@
 - ![alt text](https://user-images.githubusercontent.com/57431066/143668970-79e47a70-e6af-41d5-8a66-b15498b2e3e2.png)
 ## 4.Structure
 -![alt text](https://user-images.githubusercontent.com/57431066/143669467-2b0e1ac6-3c1f-4206-936d-89cf46e773f3.png)
-
+- **Component** : định nghĩa interface của đối tượng mà ta muốn wrap nó
+- **Concreate Component** : định nghĩa các hành vi của đổi tượng được wrap
+- **Base Decorator** : 
