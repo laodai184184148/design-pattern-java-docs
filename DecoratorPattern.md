@@ -38,4 +38,5 @@
 -![alt text](https://user-images.githubusercontent.com/57431066/143669467-2b0e1ac6-3c1f-4206-936d-89cf46e773f3.png)
 - **Component** : định nghĩa interface của đối tượng mà ta muốn wrap nó
 - **Concreate Component** : định nghĩa các hành vi của đổi tượng được wrap
-- **Base Decorator** : 
+- **Base Decorator** : lớp trừu tượng chứa một tham chiếu đến đối tượng được wrap, định nghĩa của **Base Decorator** phù hợp với interface của **Component**, constructor của đối số sẽ là đối tượng được trang trí thêm chức năng, và **Base Decorator** có thể bắt các đối tượng được wrapp thực hiện các phương thức của nó
+- **Concrete Decorators** : dùng để định nghĩa các phương thức khác được trang trí thêm vào **Concreate Component**,và thực hiện các phương thức mới của chúng trước hoặc là sau khi thực hiện phương thức mẹ của **Base Decorator**
