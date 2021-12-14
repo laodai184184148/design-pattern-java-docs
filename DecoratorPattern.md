@@ -7,11 +7,11 @@
 - Ứng dụng
 - Cách cài đặt Decorator Pattern Java Spring
 - Mối liên hệ với các loại Design Pattern khác
-- Code ví dụ\
+- Applicability
 
 ## 1. Giới thiệu
 - Decorator Pattern là một trong những Pattern thuộc nhóm cấu trúc (Structural Pattern), nó cho phép người dùng thêm các tác vụ, chức năng( method) mới vào một đối tượng, không sử dụng chiến lược thừa kế để để mở rộng thêm chức năng cho đối tượng mà dùng phương pháp bao bọc (wrap) cho lớp hiện có, mỗi khi muốn thêm chức năng mới, đối tượng hiện có được bao bọc ( wrap) lại và được trang trí (decorator thêm chức năng)
-- Ý tưởng hiện tại của Decorator Pattern là không cần thay đổi code gốc , không cần thừa kế để mở rộng đối tượng 
+- Ý tưởng hiện tại của Decorator Pattern là không cần thay đổi code gốcApplicability , không cần thừa kế để mở rộng đối tượng 
 
 ## 2. Đặt vấn đề
 decorator pattern with generic
@@ -130,3 +130,8 @@ class IconWindowCreator implements Creator {
 return new IconWindow(new ScrollbarWindow(new Window()));
 }
 ```
+## 7.Applicability 
+- Hãy sử dụng **Decorator** trong trường hợp ta cần thêm một hành vi hay phương thức nào đó vào trong một đối tượng theo runtime mà không muốn phải chính sửa code của đối tượng đó
+- Hãy sử dụng **Decorator** trong trường hợp ta bất khả thi trong việc sử dụng extends để kế thừa các phương thức của đối tượng, ví dụ trong nhiều trường hợp , nhiều loại ngôn ngữ lập trình sử dụng từ khóa **final** để ngăn ngừa trường hợp một lớp mở rộng ra quá lớn để rồi khó quản lý và maintance, đối với các lớp final, cách duy nhât để sử dụng lại các phương thức gốc của nó là sử dụng **Decorator** để bao bọc nó lại.
+- Một số ứng dụng của **Decorator Pattern ** trong thư viện java core.
+- - Có thể bạn chưa biêt , một trong những thư viện mà chúng ta hay sử dụng là Stream API được thiết kế theo **Decorator Pattern**, ở đây tất cả các lớp con của InputStream, OutPutStream, Reader, Writer đều nhận vào biến khởi tạo cùng loại
