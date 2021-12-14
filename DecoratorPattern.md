@@ -6,7 +6,6 @@
 - Structure 
 - Ứng dụng
 - Cách cài đặt Decorator Pattern Java Spring
-- Pros và Cons khi sử dụng Decorator
 - Mối liên hệ với các loại Design Pattern khác
 - Code ví dụ\
 
@@ -49,7 +48,7 @@ interface Component {
 }
 ```
 - **Concreate Component** : định nghĩa đối tượng cụ thể ta muốn warp, ở đây là "ScrollbarWindow" và "IconWindow"
-```
+```ScrollbarWindow
 class ScrollbarWindow extends Decorator {
     String scrollbar = "scrollbar";
     public ScrollbarWindow(Component component) {
@@ -67,7 +66,7 @@ class IconWindow extends Decorator {
         super(component);
     }
     @Override public void draw() {
-        super.draw();
+        super.draScrollbarWindoww();
         System.out.println("Draw " + icon);
     }
 }
@@ -86,7 +85,6 @@ class Decorator implements Component {
 }
 ```
 - **Concrete Decorators** : các lớp trang trí cụ thể bao bọc lấy các **Concreate Component**, định nghĩa lại các phương thức của **Base Decorator** hoặc là dữ nguyên và trang trí cho **Concreate Component** các phương thức mới.
-
 ```
 class ScrollbarWindow extends Decorator {
     String scrollbar = "scrollbar";
@@ -108,5 +106,27 @@ class IconWindow extends Decorator {
         super.draw();
         System.out.println("Draw " + icon);
     }
+}
+```
+## 6. Mối liên hệ với các loại Design Pattern khác
+- **Adapter** : **Adapter** bao bọc lấy đối tượng để thay đổi interface của chúng, trong khi decorator bao bọc lấy đối tượng để bổ sung thêm hành vi cho nó.
+- **Composite** : **Decorator** cũng có thể xem như là **Composite** với duy nhất một component con, ngoài ra, **Decorator** trang trí thêm các phương thức vào component con trong khi **Composite** thì sẽ tổng hợp kết quả của các thằng con lại thay vì xem phương thức tổng hợp như một decorator.
+- **Strategy** : **Decorator** bao bọc và làm thay đổi bên ngoài đối tượng , trong khi **Strategy** thì tác động vào và làm thay đổi bên trong của đổi tượng.
+- **Factory Method** : Factory Method đôi khi được sử dụng với Decorator để dùng cho lớp khởi tạo các loại component,  ví dụ :
+- - Các lớp khởi tạo creator component có sứ dụng decorator, sử dụng interface và các lớp ở ví dụ trên
+```
+interface Creator {
+Component createWindow();
+}
+class ScrollbarWindowCreator implements Creator {
+@Override public Component createWindow() {
+return new ScrollbarWindow(new Window());
+}
+```
+```
+}
+class IconWindowCreator implements Creator {
+@Override public Component createWindow() {
+return new IconWindow(new ScrollbarWindow(new Window()));
 }
 ```
